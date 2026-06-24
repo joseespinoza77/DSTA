@@ -461,8 +461,10 @@
         <img class="header-logo" src="assets/logo_unican.png" alt="Universidad de Cantabria">
 
         <div class="brand">
-            <strong>Gemelo Digital EDAR Silvouta &nbsp;·&nbsp; Proyecto Preliminar &nbsp;·&nbsp; Diseño Conforme GPS-X8</strong>
-            <span class="brand-sub">Asignatura: Diseño de tratamiento de aguas &nbsp;·&nbsp; Evaluador: José Ramón Aguado</span>
+            <strong>Gemelo Digital EDAR Silvouta &nbsp;·&nbsp; Proyecto Preliminar &nbsp;·&nbsp; Diseño Conforme
+                GPS-X8</strong>
+            <span class="brand-sub">Asignatura: Diseño de tratamiento de aguas &nbsp;·&nbsp; Evaluador: José Ramón
+                Aguado</span>
             <span class="brand-info">Proponentes: Espinoza Aburto, José &nbsp;|&nbsp; Lima Pappaseit, Verónica</span>
         </div>
 
@@ -472,6 +474,7 @@
         <nav class="nav">
             <a class="active" href="index.html">Visor 3D</a>
             <a href="datos.html">Datos y resultados</a>
+            <a href="gpsx.html">Modelo GPS-X8</a>
         </nav>
     </header>
 
@@ -479,7 +482,8 @@
         <main class="viewer">
             <div id="canvas-container"></div>
             <div class="tooltip" id="tooltip"></div>
-            <button id="btn-panel-mobile" class="panel-mobile-toggle" type="button" aria-expanded="false">Ficha técnica</button>
+            <button id="btn-panel-mobile" class="panel-mobile-toggle" type="button" aria-expanded="false">Ficha
+                técnica</button>
 
             <section class="toolbar" aria-label="Controles del visor">
                 <div class="tool-card toolbar-head">
@@ -488,89 +492,100 @@
                 </div>
 
                 <div class="toolbar-body">
-                <!-- Vistas de cámara -->
-                <div class="tool-card">
-                    <label class="section-title">Vistas de Cámara</label>
-                    <div class="row">
-                        <button id="btn-iso" class="active">Isométrica</button>
-                        <button id="btn-top">Planta</button>
-                        <button id="btn-side">Alzado</button>
-                    </div>
-                </div>
-
-                <!-- Perfiles de Proceso -->
-                <div class="tool-card">
-                    <label class="section-title">Perfiles Rápidos</label>
-                    <div class="row">
-                        <button id="btn-perf-agua">Aguas</button>
-                        <button id="btn-perf-lodos">Lodos</button>
-                        <button id="btn-perf-gas">Biogás</button>
-                        <button id="btn-perf-olores">Olores</button>
-                        <button id="btn-perf-todo" class="active">Ver Todo</button>
-                    </div>
-                </div>
-
-                <!-- Exageración Vertical -->
-                <div class="tool-card">
-                    <label class="section-title">Exageración Vertical</label>
-                    <div class="row">
-                        <button class="scale-btn" data-scale="0.5">0.5x</button>
-                        <button class="scale-btn active" data-scale="1">1x</button>
-                        <button class="scale-btn" data-scale="2">2x</button>
-                        <input id="vscale" type="range" min="0.5" max="3" step="0.1" value="1" style="width:100px;">
-                        <span id="vscale-value" style="font-size:11px;font-weight:bold;">1.0x</span>
-                    </div>
-                </div>
-
-                <!-- Opciones de Etiquetas -->
-                <div class="tool-card">
-                    <label class="section-title">Opciones de Etiquetas</label>
-                    <div class="row" style="flex-direction: column; align-items: flex-start; gap: 6px; width: 100%;">
-                        <label style="font-size:12px;"><input type="checkbox" id="chk-toggle-labels" checked> Mostrar etiquetas 3D</label>
-                        <div style="font-size: 11px; font-weight: bold; width: 100%; display: flex; align-items: center; justify-content: space-between; margin-top: 4px;">
-                            <span>Escala:</span>
-                            <span id="label-scale-val">1.0x</span>
+                    <!-- Vistas de cámara -->
+                    <div class="tool-card">
+                        <label class="section-title">Vistas de Cámara</label>
+                        <div class="row">
+                            <button id="btn-iso" class="active">Isométrica</button>
+                            <button id="btn-top">Planta</button>
+                            <button id="btn-side">Alzado</button>
                         </div>
-                        <input id="label-scale-slider" type="range" min="0.6" max="2.0" step="0.1" value="1.0" style="width: 100%; margin: 2px 0 0 0; cursor: pointer;">
                     </div>
-                </div>
 
-                <!-- Modos de escena -->
-                <div class="tool-card">
-                    <label class="section-title">Modos de Vista</label>
-                    <div class="row">
-                        <button class="mode-btn" data-mode="tecnico">Técnico</button>
-                        <button class="mode-btn" data-mode="limpio">Limpio</button>
-                        <button class="mode-btn active" data-mode="presentacion">Presentación</button>
+                    <!-- Perfiles de Proceso -->
+                    <div class="tool-card">
+                        <label class="section-title">Perfiles Rápidos</label>
+                        <div class="row">
+                            <button id="btn-perf-agua">Aguas</button>
+                            <button id="btn-perf-lodos">Lodos</button>
+                            <button id="btn-perf-gas">Biogás</button>
+                            <button id="btn-perf-olores">Olores</button>
+                            <button id="btn-perf-todo" class="active">Ver Todo</button>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Filtros de Capas de Leyenda -->
-                <details class="tool-card">
-                    <summary><span>Capas visibles</span><span>12 capas</span></summary>
-                    <div class="layer-grid">
-                    <label><input type="checkbox" class="layer-chk" data-line="Línea de Aguas (Primaria)" checked> Agua
-                        Primaria</label>
-                    <label><input type="checkbox" class="layer-chk" data-line="Línea de Aguas (Biológica)" checked> Agua
-                        Biológica</label>
-                    <label><input type="checkbox" class="layer-chk" data-line="Línea de Fangos (Espesamiento)" checked>
-                        Fango Espesado</label>
-                    <label><input type="checkbox" class="layer-chk" data-line="Línea de Fangos (Digestión)" checked>
-                        Fango Digerido</label>
-                    <label><input type="checkbox" class="layer-chk" data-line="Línea de Gas" checked> Red Biogás</label>
-                    <label><input type="checkbox" class="layer-chk" data-line="Línea de Olores" checked> Red
-                        Olores</label>
-                    <label><input type="checkbox" class="layer-chk" data-line="Topografía" checked>
-                        Terreno/Curvas</label>
-                    <label><input type="checkbox" class="layer-chk" data-line="Río" checked> Río Sar</label>
-                    <label><input type="checkbox" class="layer-chk" data-line="Calle y Accesos" checked> Accesos</label>
-                    <label><input type="checkbox" class="layer-chk" data-line="Servicios GIS" checked> Servicios
-                        GIS</label>
-                    <label><input type="checkbox" class="layer-chk" data-line="Contexto GIS" checked> Límite
-                        Parcela</label>
-                    <label><input type="checkbox" class="layer-chk" data-line="Etiquetas" checked> Nombres</label>
+                    <!-- Exageración Vertical -->
+                    <div class="tool-card">
+                        <label class="section-title">Exageración Vertical</label>
+                        <div class="row">
+                            <button class="scale-btn" data-scale="0.5">0.5x</button>
+                            <button class="scale-btn active" data-scale="1">1x</button>
+                            <button class="scale-btn" data-scale="2">2x</button>
+                            <input id="vscale" type="range" min="0.5" max="3" step="0.1" value="1" style="width:100px;">
+                            <span id="vscale-value" style="font-size:11px;font-weight:bold;">1.0x</span>
+                        </div>
                     </div>
-                </details>
+
+                    <!-- Opciones de Etiquetas -->
+                    <div class="tool-card">
+                        <label class="section-title">Opciones de Etiquetas</label>
+                        <div class="row"
+                            style="flex-direction: column; align-items: flex-start; gap: 6px; width: 100%;">
+                            <label style="font-size:12px;"><input type="checkbox" id="chk-toggle-labels" checked>
+                                Mostrar etiquetas 3D</label>
+                            <div
+                                style="font-size: 11px; font-weight: bold; width: 100%; display: flex; align-items: center; justify-content: space-between; margin-top: 4px;">
+                                <span>Escala:</span>
+                                <span id="label-scale-val">1.0x</span>
+                            </div>
+                            <input id="label-scale-slider" type="range" min="0.6" max="2.0" step="0.1" value="1.0"
+                                style="width: 100%; margin: 2px 0 0 0; cursor: pointer;">
+                        </div>
+                    </div>
+
+                    <!-- Modos de escena -->
+                    <div class="tool-card">
+                        <label class="section-title">Modos de Vista</label>
+                        <div class="row">
+                            <button class="mode-btn" data-mode="tecnico">Técnico</button>
+                            <button class="mode-btn" data-mode="limpio">Limpio</button>
+                            <button class="mode-btn active" data-mode="presentacion">Presentación</button>
+                        </div>
+                    </div>
+
+                    <!-- Filtros de Capas de Leyenda -->
+                    <details class="tool-card">
+                        <summary><span>Capas visibles</span><span>12 capas</span></summary>
+                        <div class="layer-grid">
+                            <label><input type="checkbox" class="layer-chk" data-line="Línea de Aguas (Primaria)"
+                                    checked> Agua
+                                Primaria</label>
+                            <label><input type="checkbox" class="layer-chk" data-line="Línea de Aguas (Biológica)"
+                                    checked> Agua
+                                Biológica</label>
+                            <label><input type="checkbox" class="layer-chk" data-line="Línea de Fangos (Espesamiento)"
+                                    checked>
+                                Fango Espesado</label>
+                            <label><input type="checkbox" class="layer-chk" data-line="Línea de Fangos (Digestión)"
+                                    checked>
+                                Fango Digerido</label>
+                            <label><input type="checkbox" class="layer-chk" data-line="Línea de Gas" checked> Red
+                                Biogás</label>
+                            <label><input type="checkbox" class="layer-chk" data-line="Línea de Olores" checked> Red
+                                Olores</label>
+                            <label><input type="checkbox" class="layer-chk" data-line="Topografía" checked>
+                                Terreno/Curvas</label>
+                            <label><input type="checkbox" class="layer-chk" data-line="Río" checked> Río Sar</label>
+                            <label><input type="checkbox" class="layer-chk" data-line="Calle y Accesos" checked>
+                                Accesos</label>
+                            <label><input type="checkbox" class="layer-chk" data-line="Servicios GIS" checked> Servicios
+                                GIS</label>
+                            <label><input type="checkbox" class="layer-chk" data-line="Contexto GIS" checked> Límite
+                                Parcela</label>
+                            <label><input type="checkbox" class="layer-chk" data-line="Etiquetas" checked>
+                                Nombres</label>
+                        </div>
+                    </details>
                 </div>
             </section>
 

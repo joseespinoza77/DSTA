@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Modelo GPS-X8 &mdash; EDAR Silvouta</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        :root {
+            --accent: #2a9d8f;
+            --panel-bg: rgba(255, 255, 255, 0.94);
+            --panel-border: #d7e4e7;
+            --text-dark: #17313b;
+            --text-muted: #5f7680;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text-dark);
+            background: #eef6f5;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 8px 18px;
+            background: rgba(255, 255, 255, .96);
+            border-bottom: 2px solid var(--panel-border);
+            backdrop-filter: blur(10px);
+            height: 78px;
+            box-sizing: border-box;
+        }
+
+        .header-logo {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px;
+            text-align: center;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .brand strong {
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .brand .brand-sub {
+            color: var(--text-muted);
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .brand .brand-info {
+            color: var(--text-dark);
+            font-size: 11px;
+            white-space: nowrap;
+            opacity: 0.82;
+        }
+
+        .nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav a {
+            padding: 6px 12px;
+            border: 1px solid var(--panel-border);
+            border-radius: 8px;
+            background: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            color: var(--text-dark);
+        }
+
+        .nav a.active {
+            color: #fff;
+            background: var(--text-dark);
+            border-color: var(--text-dark);
+        }
+
+        .source-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 9px;
+            color: #215c58;
+            background: #e7f5f2;
+            border: 1px solid #b9ddd7;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 18px;
+        }
+
+        .page-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0 0 8px 0;
+        }
+
+        .page-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0 0 24px 0;
+            line-height: 1.5;
+        }
+
+        .gpsx-section {
+            margin-bottom: 40px;
+        }
+
+        .gpsx-section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #254653;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 6px;
+            margin: 0 0 16px 0;
+        }
+
+        .gpsx-section h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #3e5963;
+            margin: 24px 0 12px 0;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 18px;
+        }
+
+        .image-card {
+            background: #fff;
+            border: 1px solid var(--panel-border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(25, 66, 79, .06);
+            transition: box-shadow .2s;
+        }
+
+        .image-card:hover {
+            box-shadow: 0 8px 24px rgba(25, 66, 79, .12);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity .15s;
+        }
+
+        .image-card img:hover {
+            opacity: 0.92;
+        }
+
+        .image-card .caption {
+            padding: 8px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: #f9fbfb;
+            border-top: 1px solid var(--panel-border);
+            text-transform: uppercase;
+            letter-spacing: .02em;
+        }
+
+        .layout-featured {
+            margin-bottom: 32px;
+        }
+
+        .layout-featured img {
+            width: 100%;
+            max-width: 1100px;
+            height: auto;
+            display: block;
+            border: 1px solid var(--panel-border);
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(25, 66, 79, .08);
+            cursor: pointer;
+        }
+
+        .layout-featured .caption {
+            margin-top: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 20, 0.94);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 92vw;
+            max-height: 92vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 18px;
+            right: 24px;
+            color: #fff;
+            font-size: 32px;
+            font-weight: 300;
+            cursor: pointer;
+            line-height: 1;
+            opacity: 0.7;
+            transition: opacity .2s;
+        }
+
+        .lightbox-close:hover {
+            opacity: 1;
+        }
+
+        .tag-max {
+            display: inline-block;
+            padding: 2px 8px;
+            color: #8b2500;
+            background: #fde9e4;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+            margin-left: 8px;
+        }
+
+        .tag-prom {
+            display: inline-block;
+            padding: 2px 8px;
+            color: #0a5e7a;
+            background: #e3f1f7;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+            margin-left: 8px;
+        }
+
+        @media (max-width: 820px) {
+            .site-header {
+                height: 58px;
+                padding: 9px 12px;
+            }
+
+            .brand span,
+            .brand .brand-info,
+            .nav a:not(.active),
+            .source-badge {
+                display: none;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                padding: 14px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <img class="header-logo" src="assets/logo_unican.png" alt="Universidad de Cantabria">
+
+        <div class="brand">
+            <strong>Gemelo Digital EDAR Silvouta &nbsp;·&nbsp; Proyecto Preliminar &nbsp;·&nbsp; Diseño Conforme
+                GPS-X8</strong>
+            <span class="brand-sub">Asignatura: Diseño de tratamiento de aguas &nbsp;·&nbsp; Evaluador: José Ramón
+                Aguado</span>
+            <span class="brand-info">Proponentes: Espinoza Aburto, José &nbsp;|&nbsp; Lima Pappaseit, Verónica</span>
+        </div>
+
+        <img class="header-logo" src="assets/logo_upv_ehu.png" alt="UPV/EHU">
+
+        <span class="source-badge">GPS-X 8.0 · OUTPUTS_PLUS</span>
+        <nav class="nav">
+            <a href="index.html">Visor 3D</a>
+            <a href="datos.html">Datos y resultados</a>
+            <a class="active" href="gpsx.html">Modelo GPS-X8</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1 class="page-title">Modelo de Simulación GPS-X 8.0</h1>
+        <p class="page-subtitle">
+            Diagramas de proceso y resultados del modelo estacionario en GPS-X 8.0 para dos escenarios de caudal:
+            <strong>Máximo (Qpunta = 84.240 m³/d)</strong> y <strong>Promedio (Qmedio = 64.800 m³/d)</strong>.
+            Fuente: <code>layout_EDAR_Silvouta_Final_OUTPUTS_PLUS</code>.
+        </p>
+
+        <!-- Layout general -->
+        <div class="gpsx-section">
+            <h2>Planta General &mdash; Layout</h2>
+            <div class="layout-featured">
+                <img src="assets/images/gpsx/PlantaEDAR.png" alt="Layout completo EDAR Silvouta en GPS-X 8.0"
+                    onclick="openLightbox(this.src)">
+                <div class="caption">Layout completo de la EDAR Silvouta en GPS-X 8.0 &mdash; Bloques de proceso
+                    interconectados</div>
+            </div>
+        </div>
+
+        <!-- Caudal Máximo -->
+        <div class="gpsx-section">
+            <h2>Caudal Máximo <span class="tag-max">Qpunta = 84.240 m³/d</span></h2>
+            <h3>Resultados de simulación estacionaria &mdash; Escenario Punta</h3>
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="assets/images/gpsx/max/Aireacion.png" alt="Aireación - Caudal Máximo"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Aireación &mdash; Oxígeno disuelto y demanda</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/max/CargaMasica.png" alt="Carga Másica - Caudal Máximo"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Carga Másica &mdash; Relación F/M</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/max/Caudal.png" alt="Caudal - Caudal Máximo"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Caudal &mdash; Líneas de agua y fangos</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/max/DQO.png" alt="DQO - Caudal Máximo"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">DQO &mdash; Demanda Química de Oxígeno</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/max/EnergiaTotal.png" alt="Energía Total - Caudal Máximo"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Energía Total &mdash; Balance energético</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/max/TFosforo.png" alt="Fósforo Total - Caudal Máximo"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Fósforo Total &mdash; PT</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/max/TNitrogen.png" alt="Nitrógeno Total - Caudal Máximo"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Nitrógeno Total &mdash; TN</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/max/TSS.png" alt="Sólidos Suspendidos - Caudal Máximo"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">SST &mdash; Sólidos Suspendidos Totales</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Caudal Promedio -->
+        <div class="gpsx-section">
+            <h2>Caudal Promedio <span class="tag-prom">Qmedio = 64.800 m³/d</span></h2>
+            <h3>Resultados de simulación estacionaria &mdash; Escenario Medio</h3>
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="assets/images/gpsx/Promedio/Aireacion.png" alt="Aireación - Caudal Promedio"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Aireación &mdash; Oxígeno disuelto y demanda</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/Promedio/CargaMasica.png" alt="Carga Másica - Caudal Promedio"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Carga Másica &mdash; Relación F/M</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/Promedio/Caudal.png" alt="Caudal - Caudal Promedio"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Caudal &mdash; Líneas de agua y fangos</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/Promedio/DQO.png" alt="DQO - Caudal Promedio"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">DQO &mdash; Demanda Química de Oxígeno</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/Promedio/EnergiaTotal.png" alt="Energía Total - Caudal Promedio"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Energía Total &mdash; Balance energético</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/Promedio/TFosforo.png" alt="Fósforo Total - Caudal Promedio"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Fósforo Total &mdash; PT</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/Promedio/TNitrogeno.png" alt="Nitrógeno Total - Caudal Promedio"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">Nitrógeno Total &mdash; TN</div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/images/gpsx/Promedio/TSS.png" alt="Sólidos Suspendidos - Caudal Promedio"
+                        onclick="openLightbox(this.src)">
+                    <div class="caption">SST &mdash; Sólidos Suspendidos Totales</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('open');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+        }
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
+</body>
+
+</html>
