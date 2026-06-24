@@ -38,27 +38,48 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 18px;
-            padding: 12px 22px;
-            background: rgba(255, 255, 255, .93);
-            border-bottom: 1px solid var(--panel-border);
+            gap: 14px;
+            padding: 8px 18px;
+            background: rgba(255, 255, 255, .96);
+            border-bottom: 2px solid var(--panel-border);
             backdrop-filter: blur(10px);
-            height: 64px;
+            height: 78px;
             box-sizing: border-box;
         }
 
+        .header-logo {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
         .brand {
-            display: grid;
-            gap: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px;
+            text-align: center;
+            flex: 1;
+            min-width: 0;
         }
 
         .brand strong {
-            font-size: 15px;
+            font-size: 14px;
+            white-space: nowrap;
         }
 
-        .brand span {
+        .brand .brand-sub {
             color: var(--text-muted);
-            font-size: 12px;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .brand .brand-info {
+            color: var(--text-dark);
+            font-size: 11px;
+            white-space: nowrap;
+            opacity: 0.82;
         }
 
         .nav {
@@ -88,8 +109,8 @@
             grid-template-columns: minmax(0, 1fr) minmax(320px, 360px);
             width: 100%;
             min-width: 0;
-            height: calc(100vh - 64px);
-            height: calc(100dvh - 64px);
+            height: calc(100vh - 78px);
+            height: calc(100dvh - 78px);
             overflow: hidden;
         }
 
@@ -437,10 +458,16 @@
 <body>
 
     <header class="site-header">
+        <img class="header-logo" src="assets/logo_unican.png" alt="Universidad de Cantabria">
+
         <div class="brand">
-            <strong>Gemelo Digital EDAR Silvouta</strong>
-            <span>Proyecto de Ingeniería · Diseño Conforme GPS-X8</span>
+            <strong>Gemelo Digital EDAR Silvouta &nbsp;·&nbsp; Proyecto de Ingeniería &nbsp;·&nbsp; Diseño Conforme GPS-X8</strong>
+            <span class="brand-sub">Asignatura: Diseño de tratamiento de aguas &nbsp;·&nbsp; Evaluador: José Ramón Aguado</span>
+            <span class="brand-info">Proponentes: Espinoza Aburto, José &nbsp;|&nbsp; Lima Pappaseit, Verónica</span>
         </div>
+
+        <img class="header-logo" src="assets/logo_upv_ehu.png" alt="UPV/EHU">
+
         <span class="source-badge">GPS-X 8.0 · OUTPUTS_PLUS max</span>
         <nav class="nav">
             <a class="active" href="index.html">Visor 3D</a>
@@ -558,7 +585,7 @@
     </div>
 
     <!-- Script principal de la escena -->
-    <script src="app.js?v=20260624-fix-labels-2"></script>
+    <script src="app.js?v=20260624-fix-elevations-1"></script>
 </body>
 
 </html>
