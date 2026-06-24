@@ -283,16 +283,19 @@
             border-radius: 8px;
             box-shadow: var(--shadow);
         }
+
         .examen-section h2 {
             margin: 0 0 8px 0;
             font-size: 21px;
             color: var(--ink);
         }
+
         .examen-accordion {
             display: grid;
             gap: 8px;
             margin-top: 16px;
         }
+
         .examen-accordion details {
             background: #ffffff;
             border: 1px solid var(--line);
@@ -301,10 +304,12 @@
             overflow: hidden;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
+
         .examen-accordion details[open] {
             box-shadow: 0 8px 18px rgba(25, 66, 79, 0.08);
             border-color: var(--green);
         }
+
         .examen-accordion summary {
             padding: 12px 16px;
             font-size: 14px;
@@ -319,11 +324,13 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .examen-accordion details[open] summary {
             background: #f5faf9;
             border-bottom: 1px solid var(--line);
             color: var(--teal);
         }
+
         .examen-accordion .answer-body {
             padding: 16px;
             font-size: 13px;
@@ -331,31 +338,40 @@
             line-height: 1.5;
             background: #ffffff;
         }
+
         .examen-accordion .answer-body h4 {
             margin: 12px 0 6px 0;
             color: var(--ink);
             font-size: 13px;
             font-weight: bold;
         }
+
         .examen-accordion .answer-body h4:first-child {
             margin-top: 0;
         }
+
         .examen-accordion .answer-body p {
             margin: 0 0 10px 0;
         }
+
         .examen-accordion .answer-body p:last-child {
             margin-bottom: 0;
         }
-        .examen-accordion .answer-body ul, .examen-accordion .answer-body ol {
+
+        .examen-accordion .answer-body ul,
+        .examen-accordion .answer-body ol {
             margin: 0 0 10px 0;
             padding-left: 20px;
         }
+
         .examen-accordion .answer-body li {
             margin-bottom: 4px;
         }
+
         .examen-accordion .answer-body strong {
             color: var(--ink);
         }
+
         .examen-accordion .answer-body blockquote {
             margin: 10px 0;
             padding: 8px 12px;
@@ -363,16 +379,20 @@
             border-left: 3px solid var(--green);
             font-style: italic;
         }
+
         .examen-accordion .answer-body table {
             margin: 10px 0;
             width: 100%;
             border-collapse: collapse;
         }
-        .examen-accordion .answer-body th, .examen-accordion .answer-body td {
+
+        .examen-accordion .answer-body th,
+        .examen-accordion .answer-body td {
             padding: 6px 8px;
             border-bottom: 1px solid var(--line);
             text-align: left;
         }
+
         .examen-accordion .answer-body th {
             background: #f0f7f7;
             font-weight: 700;
@@ -403,32 +423,54 @@
         <section class="examen-section">
             <h2>Cuestionario de Defensa y Examen Oral (RESPUESTAS_EVALUACION_Y_EXAMEN)</h2>
             <p style="font-size: 13px; color: var(--muted); margin: 0 0 16px 0;">
-                Cuestionario oficial verificado para la defensa del diseño de la EDAR de Silvouta ante el tribunal. Pulsa sobre cualquier pregunta para ver su respuesta.
+                Cuestionario oficial verificado para la defensa del diseño de la EDAR de Silvouta ante el tribunal.
+                Pulsa sobre cualquier pregunta para ver su respuesta.
             </p>
             <div class="examen-accordion">
                 <details>
-                    <summary>P1. ¿En qué partes del proceso has determinado los criterios y los has precalculado?</summary>
+                    <summary>P1. ¿En qué partes del proceso has determinado los criterios y los has precalculado?
+                    </summary>
                     <div class="answer-body">
                         <h4>Línea de Aguas:</h4>
                         <ul>
-                            <li><strong>Pretratamiento:</strong> Tamices (luz 3 mm) y desarenador-desengrasador aireado (TRH ≥ 10 min a Qmed, 5 min a Qmax, inyección de aire 4 m³/h·m³). *Fuente: Excel V11, hoja 03_Pretratamiento*.</li>
-                            <li><strong>Decantación primaria:</strong> 2 decantadores con superficie de lamelas de 810 m² cada uno (Total: 1.620 m²). *Fuente: GPS-X8 lyt → Caflat&o = 810.0*.</li>
-                            <li><strong>Dosificación química (FeCl3):</strong> Dosis de diseño de 11 gFe/m³ (10 gFe/m³ en simulación). *Fuente: Excel V11 06_FeCl3_activa, GPS-X8 lyt → Cchem4dosager&o = 10000.0*.</li>
-                            <li><strong>Biorreactores BNR-MBR:</strong> 2 reactores de 20.020 m³ cada uno, con 4 zonas internas (fracciones 0,25/0,15/0,15/0,45) y setpoint de MLSS a 8.000 mg/L. *Fuente: GPS-X8 lyt → Cvmcon&o = 20020.0*.</li>
-                            <li><strong>Ultrafiltración (Membranas):</strong> 175.500 m² totales de área de filtración con flujo de 20 LMH (7+1 trenes). *Fuente: GPS-X8 lyt → Cmemarea&o = 175500.0*.</li>
-                            <li><strong>Tanque de Tormentas:</strong> Vaso de laminación para excedentes de lluvia. *Fuente: Excel V11, hoja 55_Tormentas_Alivios*.</li>
+                            <li><strong>Pretratamiento:</strong> Tamices (luz 3 mm) y desarenador-desengrasador aireado
+                                (TRH ≥ 10 min a Qmed, 5 min a Qmax, inyección de aire 4 m³/h·m³). *Fuente: Excel V11,
+                                hoja 03_Pretratamiento*.</li>
+                            <li><strong>Decantación primaria:</strong> 2 decantadores primarios rectangulares de 810 m²
+                                cada uno (L1 activa, L2 en reserva). Decantación por gravedad convencional. *Fuente:
+                                GPS-X8 lyt →
+                                Caflat&o = 810.0*.</li>
+                            <li><strong>Dosificación química (FeCl3):</strong> Dosis de diseño de 11 gFe/m³ (10 gFe/m³
+                                en simulación). *Fuente: Excel V11 06_FeCl3_activa, GPS-X8 lyt → Cchem4dosager&o =
+                                10000.0*.</li>
+                            <li><strong>Biorreactores BNR-MBR:</strong> 2 reactores de 20.020 m³ cada uno, con 4 zonas
+                                internas (fracciones 0,25/0,15/0,15/0,45) y setpoint de MLSS a 8.000 mg/L. *Fuente:
+                                GPS-X8 lyt → Cvmcon&o = 20020.0*.</li>
+                            <li><strong>Ultrafiltración (Membranas):</strong> 175.500 m² totales de área de filtración
+                                con flujo de 20 LMH (7+1 trenes). *Fuente: GPS-X8 lyt → Cmemarea&o = 175500.0*.</li>
+                            <li><strong>Tanque de Tormentas:</strong> Vaso de laminación para excedentes de lluvia.
+                                *Fuente: Excel V11, hoja 55_Tormentas_Alivios*.</li>
                         </ul>
                         <h4>Línea de Fangos y Gas:</h4>
                         <ul>
-                            <li><strong>Espesador:</strong> Underflow concentrado al 4% (40.000 mg/L). *Fuente: GPS-X8 lyt → Cundersolids&s = 40000.0*.</li>
-                            <li><strong>Digestión anaerobia:</strong> 1 digestor de 9.116,89 m³ con volumen de cúpula de biogás de 2.266,47 m³. TRH resultante: 18,2 días a Qmedio. *Fuente: GPS-X8 lyt → Cvmcon&o = 9116.8902*.</li>
-                            <li><strong>Deshidratación:</strong> Centrífugas con sequedad de torta al 28%. *Fuente: GPS-X8 lyt → Cundersolids&s = 280000.0*.</li>
-                            <li><strong>Cogeneración CHP:</strong> Potencia eléctrica de 208,41 kWe (η=35%) en simulación Max (210,82 kWe en Excel V11). *Fuente: GPS-X8 Max YAML, Excel V11*.</li>
+                            <li><strong>Espesador:</strong> Underflow concentrado al 4% (40.000 mg/L). *Fuente: GPS-X8
+                                lyt → Cundersolids&s = 40000.0*.</li>
+                            <li><strong>Digestión anaerobia:</strong> 1 digestor de 9.116,89 m³ con volumen de cúpula de
+                                biogás de 2.266,47 m³. TRH resultante: 18,2 días a Qmedio. *Fuente: GPS-X8 lyt →
+                                Cvmcon&o = 9116.8902*.</li>
+                            <li><strong>Deshidratación:</strong> Centrífugas con sequedad de torta al 28%. *Fuente:
+                                GPS-X8 lyt → Cundersolids&s = 280000.0*.</li>
+                            <li><strong>Cogeneración CHP:</strong> Potencia eléctrica de 208,41 kWe (η=35%) en
+                                simulación Max (210,82 kWe en Excel V11). *Fuente: GPS-X8 Max YAML, Excel V11*.</li>
                         </ul>
                         <h4>Línea de Olores y Diseño Hidráulico:</h4>
                         <ul>
-                            <li><strong>Desodorización:</strong> Potencia de ventilación de 29,35 kW en punta. *Fuente: Excel V11*.</li>
-                            <li><strong>Bombeos y Tuberías:</strong> Darcy-Weisbach + Swamee-Jain. Potencia total de bombeos auxiliares de proceso y ventilación en punta: 162,60 kW. Potencia de soplantes biológicas: 316,70 kW. Potencia de bombas MBR: 242,44 kW. *Fuentes: Excel V11 24_Resumen_Bombas, GPS-X8 Max*.</li>
+                            <li><strong>Desodorización:</strong> Potencia de ventilación de 29,35 kW en punta. *Fuente:
+                                Excel V11*.</li>
+                            <li><strong>Bombeos y Tuberías:</strong> Darcy-Weisbach + Swamee-Jain. Potencia total de
+                                bombeos auxiliares de proceso y ventilación en punta: 162,60 kW. Potencia de soplantes
+                                biológicas: 316,70 kW. Potencia de bombas MBR: 242,44 kW. *Fuentes: Excel V11
+                                24_Resumen_Bombas, GPS-X8 Max*.</li>
                         </ul>
                     </div>
                 </details>
@@ -436,11 +478,19 @@
                 <details>
                     <summary>P2. ¿Qué planos has representado y cuáles son sus características principales?</summary>
                     <div class="answer-body">
-                        <p>Hemos representado el plano general georreferenciado <strong>EDAR_Perfiles_Plantas_v0</strong> en formato DXF/PDF en coordenadas <strong>EPSG:25829 (ETRS89/UTM 29N)</strong>, que incluye:</p>
+                        <p>Hemos representado el plano general georreferenciado
+                            <strong>EDAR_Perfiles_Plantas_v0</strong> en formato DXF/PDF en coordenadas
+                            <strong>EPSG:25829 (ETRS89/UTM 29N)</strong>, que incluye:
+                        </p>
                         <ul>
-                            <li><strong>10 rutas longitudinales</strong> por líneas de proceso: AGUA-PRINCIPAL (longitud 493,1 m, cotas 121,1 → 112,0 m), AGUA-BYPASS (370,4 m), FANGOS-PRINCIPAL (332,7 m, cotas 117,8 → 128,5 m), FANGOS-WAS (80,1 m), FANGOS-ESCURRIDOS (55,6 m), GAS-APROVECHAMIENTO (27,9 m), GAS-ANTORCHA (65,9 m) y 3 rutas de olores (372,0 m, 248,3 m y 349,5 m).</li>
-                            <li><strong>25 equipos</strong> modelados con precisión geométrica y acoplados a la topografía del terreno.</li>
-                            <li><strong>MDT/DEM:</strong> Topografía digital de terreno (TopoDEM.tif) con curvas de nivel reales entre cota mínima 117,71 m y cota máxima 131,34 m.</li>
+                            <li><strong>10 rutas longitudinales</strong> por líneas de proceso: AGUA-PRINCIPAL (longitud
+                                493,1 m, cotas 121,1 → 112,0 m), AGUA-BYPASS (370,4 m), FANGOS-PRINCIPAL (332,7 m, cotas
+                                117,8 → 128,5 m), FANGOS-WAS (80,1 m), FANGOS-ESCURRIDOS (55,6 m), GAS-APROVECHAMIENTO
+                                (27,9 m), GAS-ANTORCHA (65,9 m) y 3 rutas de olores (372,0 m, 248,3 m y 349,5 m).</li>
+                            <li><strong>25 equipos</strong> modelados con precisión geométrica y acoplados a la
+                                topografía del terreno.</li>
+                            <li><strong>MDT/DEM:</strong> Topografía digital de terreno (TopoDEM.tif) con curvas de
+                                nivel reales entre cota mínima 117,71 m y cota máxima 131,34 m.</li>
                         </ul>
                     </div>
                 </details>
@@ -450,50 +500,81 @@
                     <div class="answer-body">
                         <h4>Métodos de Cálculo:</h4>
                         <ul>
-                            <li><strong>Pérdidas de carga por fricción (hf):</strong> Ecuación de **Darcy-Weisbach** combinada con el factor de fricción de **Swamee-Jain** para tuberías rugosas (PVC rugosidad e = 0,15 mm):
+                            <li><strong>Pérdidas de carga por fricción (hf):</strong> Ecuación de **Darcy-Weisbach**
+                                combinada con el factor de fricción de **Swamee-Jain** para tuberías rugosas (PVC
+                                rugosidad e = 0,15 mm):
                                 <code>f = 0.25 / [log10(e/(3.7*D) + 5.74/(Re^0.9))]^2</code>
                             </li>
-                            <li><strong>Pérdidas singulares (hm):</strong> Método de longitud equivalente de accesorios (codos, válvulas, piezas especiales).</li>
-                            <li><strong>Potencia hidráulica de bombas:</strong> <code>P = rho * g * Q * H / eta</code> (densidad del fluido rho y rendimiento de bomba eta = 70%).</li>
+                            <li><strong>Pérdidas singulares (hm):</strong> Método de longitud equivalente de accesorios
+                                (codos, válvulas, piezas especiales).</li>
+                            <li><strong>Potencia hidráulica de bombas:</strong> <code>P = rho * g * Q * H / eta</code>
+                                (densidad del fluido rho y rendimiento de bomba eta = 70%).</li>
                         </ul>
                         <h4>Valores de Referencia Fijos:</h4>
                         <ul>
-                            <li><strong>Carga por habitante equivalente:</strong> 60 g DBO5/hab-eq·d (Directiva 91/271/CEE).</li>
-                            <li><strong>Rendimiento de lodos activos (ATV-A 131E):</strong> 0,65 kg SS producido por cada kg DBO5 eliminado.</li>
-                            <li><strong>Destrucción de materia volátil (MV) en digestor:</strong> 50% según Metcalf & Eddy (38,5% en simulación GPS-X8 Max).</li>
-                            <li><strong>PCI del biogás:</strong> 5.500 kcal/m³ (23.000 kJ/m³), asumiendo una riqueza de metano (CH4) ≈ 60%.</li>
-                            <li><strong>Flux nominal de membranas MBR:</strong> 20 LMH a temperatura mínima de diseño (12,4 °C).</li>
+                            <li><strong>Carga por habitante equivalente:</strong> 60 g DBO5/hab-eq·d (Directiva
+                                91/271/CEE).</li>
+                            <li><strong>Rendimiento de lodos activos (ATV-A 131E):</strong> 0,65 kg SS producido por
+                                cada kg DBO5 eliminado.</li>
+                            <li><strong>Destrucción de materia volátil (MV) en digestor:</strong> 50% según Metcalf &
+                                Eddy (38,5% en simulación GPS-X8 Max).</li>
+                            <li><strong>PCI del biogás:</strong> 5.500 kcal/m³ (23.000 kJ/m³), asumiendo una riqueza de
+                                metano (CH4) ≈ 60%.</li>
+                            <li><strong>Flux nominal de membranas MBR:</strong> 20 LMH a temperatura mínima de diseño
+                                (12,4 °C).</li>
                         </ul>
                     </div>
                 </details>
 
                 <details>
-                    <summary>P4. ¿Qué criterios o parámetros has seguido para dimensionar los volúmenes y superficies?</summary>
+                    <summary>P4. ¿Qué criterios o parámetros has seguido para dimensionar los volúmenes y superficies?
+                    </summary>
                     <div class="answer-body">
                         <ul>
-                            <li><strong>Decantación primaria:</strong> Velocidad ascensional máxima de diseño (Vas) ≤ 2,5 m/h a caudal punta. Superficie lamelar total de 1.620 m² (2 unidades de 810 m² cada una) con profundidad útil de 3 m.</li>
-                            <li><strong>Biorreactores BNR-MBR:</strong> Volumen total de 20.020 m³ por bloque (2 bloques paralelos) para operar a MLSS de diseño de 8.000 mg/L. Superficie de cada tanque: 3.640 m². Área total de membranas: 175.500 m² (diseñado con un flux nominal de 20 LMH).</li>
-                            <li><strong>Digestión anaerobia:</strong> 1 digestor cilíndrico de 9.116,89 m³ útil (hoja 12_Digestor de Excel V11) con volumen de cabeza de gas de 2.266,47 m³. Esto asegura un TRH de 18,2 días a caudal medio, cumpliendo la normativa mesófila.</li>
-                            <li><strong>Espesador por gravedad:</strong> Volumen de 395 m³ (diámetro 12 m, profundidad 3,5 m) para lodos mixtos antes del digestor.</li>
+                            <li><strong>Decantación primaria:</strong> Velocidad ascensional máxima de diseño (Vas) ≤
+                                2,5 m/h a caudal punta. Superficie en planta total de 1.620 m² (2 unidades de 810 m²
+                                cada
+                                una) con profundidad útil de 3 m.</li>
+                            <li><strong>Biorreactores BNR-MBR:</strong> Volumen total de 20.020 m³ por bloque (2 bloques
+                                paralelos) para operar a MLSS de diseño de 8.000 mg/L. Superficie de cada tanque: 3.640
+                                m². Área total de membranas: 175.500 m² (diseñado con un flux nominal de 20 LMH).</li>
+                            <li><strong>Digestión anaerobia:</strong> 1 digestor cilíndrico de 9.116,89 m³ útil (hoja
+                                12_Digestor de Excel V11) con volumen de cabeza de gas de 2.266,47 m³. Esto asegura un
+                                TRH de 18,2 días a caudal medio, cumpliendo la normativa mesófila.</li>
+                            <li><strong>Espesador por gravedad:</strong> Volumen de 395 m³ (diámetro 12 m, profundidad
+                                3,5 m) para lodos mixtos antes del digestor.</li>
                         </ul>
                     </div>
                 </details>
 
                 <details>
-                    <summary>P5. ¿Qué y cuántos residuos, subproductos o efluentes se generan y cuál es su destino?</summary>
+                    <summary>P5. ¿Qué y cuántos residuos, subproductos o efluentes se generan y cuál es su destino?
+                    </summary>
                     <div class="answer-body">
                         <ul>
-                            <li><strong>Residuos de desbaste (tamices):</strong> Sólidos gruesos retenidos. Se lavan y compactan, acumulándose en el Contenedor de Gruesos de Pretratamiento (12 m³) y retirándose a vertedero o incineración autorizada.</li>
-                            <li><strong>Arenas y Flotados (grasas):</strong> Extraídas del desarenador-desengrasador aireado. Arenas lavadas van a vertedero de inertes; grasas van a gestor de residuos.</li>
+                            <li><strong>Residuos de desbaste (tamices):</strong> Sólidos gruesos retenidos. Se lavan y
+                                compactan, acumulándose en el Contenedor de Gruesos de Pretratamiento (12 m³) y
+                                retirándose a vertedero o incineración autorizada.</li>
+                            <li><strong>Arenas y Flotados (grasas):</strong> Extraídas del desarenador-desengrasador
+                                aireado. Arenas lavadas van a vertedero de inertes; grasas van a gestor de residuos.
+                            </li>
                             <li><strong>Torta de fango deshidratado:</strong>
                                 <ul>
-                                    <li>GPS-X8 Max: 28,70 t/d húmeda al 28% de sequedad (8,04 tSS/d de materia seca).</li>
+                                    <li>GPS-X8 Max: 28,70 t/d húmeda al 28% de sequedad (8,04 tSS/d de materia seca).
+                                    </li>
                                     <li>Excel V11 (Qmedio): 26,00 t/d húmeda (7,28 tSS/d de materia seca).</li>
-                                    <li>Destino: Se almacena en los 2 silos de almacenamiento (120 t c/u) y se transporta en camiones (aprox. 2 viajes de camión de 20 t diarios) para aplicación agrícola directa o compostaje.</li>
+                                    <li>Destino: Se almacena en los 2 silos de almacenamiento (120 t c/u) y se
+                                        transporta en camiones (aprox. 2 viajes de camión de 20 t diarios) para
+                                        aplicación agrícola directa o compostaje.</li>
                                 </ul>
                             </li>
-                            <li><strong>Retornos (sobrenadantes y escurridos):</strong> Caudal de escurridos de deshidratación y espesamiento rico en amonio y fósforo (aprox. 1.250 m³/d recirculado) que retorna al depósito de retornos y se bombea gradualmente a cabecera.</li>
-                            <li><strong>Efluente depurado final:</strong> Caudal final depurado de 82.944,58 m³/d (escenario Max) vertido directamente al cauce occidental del Río Sar cumpliendo estrictamente con DBO5 2,02 mg/L, DQO 22,26 mg/L, SST 1,98 mg/L, TN 5,29 mg/L y TP 0,40 mg/L.</li>
+                            <li><strong>Retornos (sobrenadantes y escurridos):</strong> Caudal de escurridos de
+                                deshidratación y espesamiento rico en amonio y fósforo (aprox. 1.250 m³/d recirculado)
+                                que retorna al depósito de retornos y se bombea gradualmente a cabecera.</li>
+                            <li><strong>Efluente depurado final:</strong> Caudal final depurado de 82.944,58 m³/d
+                                (escenario Max) vertido directamente al cauce occidental del Río Sar cumpliendo
+                                estrictamente con DBO5 2,02 mg/L, DQO 22,26 mg/L, SST 1,98 mg/L, TN 5,29 mg/L y TP 0,40
+                                mg/L.</li>
                         </ul>
                     </div>
                 </details>
@@ -502,24 +583,52 @@
                     <summary>P6. ¿Cuántas líneas o número de elementos tiene cada proceso y por qué?</summary>
                     <div class="answer-body">
                         <ul>
-                            <li><strong>Líneas principales de la planta:</strong> 2 líneas físicas paralelas idénticas para garantizar redundancia y operatividad continua durante paradas de mantenimiento. GPS-X8 simula la L1 activa (100% de caudal) y la L2 en reserva activa (divisor con fracción 1.0/0.0).</li>
-                            <li><strong>Pretratamiento (Tamices y Desarenadores):</strong> 4 canales paralelos para permitir una modulación hidráulica exacta según el caudal horario entrante y facilitar la limpieza periódica manual de canales individuales.</li>
-                            <li><strong>Decantación primaria:</strong> 2 decantadores (1 por línea de proceso), permitiendo aislar uno de ellos si el caudal entrante es bajo o para mantenimiento.</li>
-                            <li><strong>Dosificación química (FeCl3):</strong> 2 estaciones dosificadoras independientes (1 por línea) inyectando hierro proporcionalmente al flujo.</li>
-                            <li><strong>Reactores BNR-MBR:</strong> 2 bloques biorreactores independientes de 20.020 m³. Cada bloque contiene 8 trenes MBR de membranas en una configuración 7+1 (7 activos + 1 en limpieza CIP periódica) para poder realizar lavados químicos sin mermar la capacidad de diseño.</li>
-                            <li><strong>Espesamiento por gravedad, Digestión anaerobia y Deshidratación:</strong> 1 unidad de cada uno, debido a que el fango es un proceso continuo pero acumulativo, y los tanques de acondicionamiento (F02) y tampón (F04) regulan y amortiguan los picos de fango producido.</li>
+                            <li><strong>Líneas principales de la planta:</strong> 2 líneas físicas paralelas idénticas
+                                para garantizar redundancia y operatividad continua durante paradas de mantenimiento.
+                                GPS-X8 simula la L1 activa (100% de caudal) y la L2 en reserva activa (divisor con
+                                fracción 1.0/0.0).</li>
+                            <li><strong>Pretratamiento (Tamices y Desarenadores):</strong> 4 canales paralelos para
+                                permitir una modulación hidráulica exacta según el caudal horario entrante y facilitar
+                                la limpieza periódica manual de canales individuales.</li>
+                            <li><strong>Decantación primaria:</strong> 2 decantadores (1 por línea de proceso),
+                                permitiendo aislar uno de ellos si el caudal entrante es bajo o para mantenimiento.</li>
+                            <li><strong>Dosificación química (FeCl3):</strong> 2 estaciones dosificadoras independientes
+                                (1 por línea) inyectando hierro proporcionalmente al flujo.</li>
+                            <li><strong>Reactores BNR-MBR:</strong> 2 bloques biorreactores independientes de 20.020 m³.
+                                Cada bloque contiene 8 trenes MBR de membranas en una configuración 7+1 (7 activos + 1
+                                en limpieza CIP periódica) para poder realizar lavados químicos sin mermar la capacidad
+                                de diseño.</li>
+                            <li><strong>Espesamiento por gravedad, Digestión anaerobia y Deshidratación:</strong> 1
+                                unidad de cada uno, debido a que el fango es un proceso continuo pero acumulativo, y los
+                                tanques de acondicionamiento (F02) y tampón (F04) regulan y amortiguan los picos de
+                                fango producido.</li>
                         </ul>
                     </div>
                 </details>
 
                 <details>
-                    <summary>P7. ¿Cómo funciona la instalación con caudales de entrada mínimos, punta, de lluvia y máximos de llegada?</summary>
+                    <summary>P7. ¿Cómo funciona la instalación con caudales de entrada mínimos, punta, de lluvia y
+                        máximos de llegada?</summary>
                     <div class="answer-body">
                         <ul>
-                            <li><strong>Caudales mínimos (horario seco nocturno):</strong> El sistema PLC detecta la baja de nivel en el pozo de gruesos y desactiva bombas de cabecera B1 secundarias, dejando el bombeo al mínimo. Se cierran compuertas motorizadas de pretratamiento dejando activos solo 2 canales para mantener velocidades autolimpiantes. Las soplantes de mezcla y biológico reducen aireación al mínimo para ahorrar energía.</li>
-                            <li><strong>Caudal punta seco de diseño (84.240 m³/d = 3.510 m³/h):</strong> Capacidad total de la planta. Ambas líneas de aguas operan a pleno rendimiento. El escenario GPS-X8 Max modela este punto crítico confirmando el cumplimiento holgado del vertido.</li>
-                            <li><strong>Caudal en episodio de lluvia (hasta 3,0 m³/s = 10.800 m³/h):</strong> El pretratamiento de cabecera admite hasta 3,0 m³/s. El caudal que pasa a decantación primaria y reactores biológicos se limita estrictamente a la capacidad punta seca (3.510 m³/h). El caudal sobrante se desvía por gravedad al **Tanque de Tormentas**. Si el tanque se llena, el excedente pretratado y decantado se deriva por el bypass general de tormentas y pasa por desinfección UV antes de su descarga.</li>
-                            <li><strong>Caudal máximo de llegada (límite del colector):</strong> Caudales extraordinarios de tormenta que superen los 3,0 m³/s activan el bypass de emergencia del pozo de gruesos vertiendo el exceso de agua bruteada directamente al Río Sar por rebose de seguridad.</li>
+                            <li><strong>Caudales mínimos (horario seco nocturno):</strong> El sistema PLC detecta la
+                                baja de nivel en el pozo de gruesos y desactiva bombas de cabecera B1 secundarias,
+                                dejando el bombeo al mínimo. Se cierran compuertas motorizadas de pretratamiento dejando
+                                activos solo 2 canales para mantener velocidades autolimpiantes. Las soplantes de mezcla
+                                y biológico reducen aireación al mínimo para ahorrar energía.</li>
+                            <li><strong>Caudal punta seco de diseño (84.240 m³/d = 3.510 m³/h):</strong> Capacidad total
+                                de la planta. Ambas líneas de aguas operan a pleno rendimiento. El escenario GPS-X8 Max
+                                modela este punto crítico confirmando el cumplimiento holgado del vertido.</li>
+                            <li><strong>Caudal en episodio de lluvia (hasta 3,0 m³/s = 10.800 m³/h):</strong> El
+                                pretratamiento de cabecera admite hasta 3,0 m³/s. El caudal que pasa a decantación
+                                primaria y reactores biológicos se limita estrictamente a la capacidad punta seca (3.510
+                                m³/h). El caudal sobrante se desvía por gravedad al **Tanque de Tormentas**. Si el
+                                tanque se llena, el excedente pretratado y decantado se deriva por el bypass general de
+                                tormentas y pasa por desinfección UV antes de su descarga.</li>
+                            <li><strong>Caudal máximo de llegada (límite del colector):</strong> Caudales
+                                extraordinarios de tormenta que superen los 3,0 m³/s activan el bypass de emergencia del
+                                pozo de gruesos vertiendo el exceso de agua bruteada directamente al Río Sar por rebose
+                                de seguridad.</li>
                         </ul>
                     </div>
                 </details>
@@ -532,14 +641,18 @@
                             <li><strong>Entradas:</strong>
                                 <ul>
                                     <li>(1) Agua decantada procedente de la decantación primaria.</li>
-                                    <li>(2) Dosificación de Cloruro Férrico (FeCl3) inyectado en el flujo de entrada.</li>
-                                    <li>(3) Recirculación interna de licor mezcla (497.220 m³/d) bombeado desde la zona aerobia (Zona 4) a la zona anóxica (Zona 1).</li>
+                                    <li>(2) Dosificación de Cloruro Férrico (FeCl3) inyectado en el flujo de entrada.
+                                    </li>
+                                    <li>(3) Recirculación interna de licor mezcla (497.220 m³/d) bombeado desde la zona
+                                        aerobia (Zona 4) a la zona anóxica (Zona 1).</li>
                                 </ul>
                             </li>
                             <li><strong>Salidas:</strong>
                                 <ul>
-                                    <li>(1) Permeado MBR (agua depurada libre de sólidos) extraído por bombas de vacío hacia el canal de desinfección UV.</li>
-                                    <li>(2) Purga de lodo biológico en exceso (WAS): 500 m³/d (Max simulado) / 750 m³/d (criterio de diseño) bombeado hacia la línea de fangos (espesamiento).</li>
+                                    <li>(1) Permeado MBR (agua depurada libre de sólidos) extraído por bombas de vacío
+                                        hacia el canal de desinfección UV.</li>
+                                    <li>(2) Purga de lodo biológico en exceso (WAS): 500 m³/d (Max simulado) / 750 m³/d
+                                        (criterio de diseño) bombeado hacia la línea de fangos (espesamiento).</li>
                                     <li>(3) Rebose de control hidráulico de MBR a cabecera.</li>
                                 </ul>
                             </li>
@@ -548,15 +661,18 @@
                         <ul>
                             <li><strong>Entradas:</strong>
                                 <ul>
-                                    <li>(1) Fango mixto espesado (underflow de espesador F01 + fango primario tamizado F00).</li>
+                                    <li>(1) Fango mixto espesado (underflow de espesador F01 + fango primario tamizado
+                                        F00).</li>
                                     <li>(2) Retorno térmico del biogás/cogeneración para calentamiento del fango.</li>
                                 </ul>
                             </li>
                             <li><strong>Salidas:</strong>
                                 <ul>
-                                    <li>(1) Flujo continuo de biogás producido en la cúpula gaseosa del digestor hacia el sistema de gasómetros y CHP.</li>
+                                    <li>(1) Flujo continuo de biogás producido en la cúpula gaseosa del digestor hacia
+                                        el sistema de gasómetros y CHP.</li>
                                     <li>(2) Fango digerido estabilizado hacia el depósito tampón de lodos (F04).</li>
-                                    <li>(3) Rebose de lodos / sobrenadante del digestor hacia el depósito de retornos (A13).</li>
+                                    <li>(3) Rebose de lodos / sobrenadante del digestor hacia el depósito de retornos
+                                        (A13).</li>
                                 </ul>
                             </li>
                         </ul>
@@ -564,12 +680,28 @@
                 </details>
 
                 <details>
-                    <summary>P9. ¿Cómo fluyen el agua, los fangos y el gas entre dos tratamientos consecutivos?</summary>
+                    <summary>P9. ¿Cómo fluyen el agua, los fangos y el gas entre dos tratamientos consecutivos?
+                    </summary>
                     <div class="answer-body">
                         <ul>
-                            <li><strong>Flujo del Agua (Gravedad dominada):</strong> Entra a la EDAR por el colector por gravedad al pozo de gruesos. Las bombas de cabecera B1 elevan el agua bruta hasta la cota del canal de desbaste de finos y desarenador (cota 121,1 m). A partir de ahí, el agua fluye <strong>100% por gravedad</strong> atravesando los decantadores primarios, los reactores BNR, las membranas MBR, el canal UV y la arqueta de vertido hasta descargar en el Río Sar (cota 112,0 m).</li>
-                            <li><strong>Flujo de los Fangos (Bombeo mecánico forzado):</strong> Los lodos primarios purgados en la solera de decantadores y el lodo WAS purgado del MBR se bombean mediante bombas helicoidales hasta el espesador por gravedad. El lodo espesado al 4% se bombea de forma temporizada hasta el digestor anaerobio. El lodo digerido del depósito tampón se impulsa a presión mediante bombas de cavidad progresiva a las centrífugas de deshidratación.</li>
-                            <li><strong>Flujo del Gas (Presión biogénica y soplado):</strong> El biogás se genera a una presión de cabeza de 30-50 mbar en la cúpula del digestor. Fluye por su propia sobrepresión a través de la tubería de gas (filtrado de condensados y carbón activo) hasta los gasómetros de membrana. Soplantes centrífugas de biogás elevan la presión a unos 150-200 mbar para alimentar la válvula de gas del motor CHP y las calderas de calefacción.</li>
+                            <li><strong>Flujo del Agua (Gravedad dominada):</strong> Entra a la EDAR por el colector por
+                                gravedad al pozo de gruesos. Las bombas de cabecera B1 elevan el agua bruta hasta la
+                                cota del canal de desbaste de finos y desarenador (cota 121,1 m). A partir de ahí, el
+                                agua fluye <strong>100% por gravedad</strong> atravesando los decantadores primarios,
+                                los reactores BNR, las membranas MBR, el canal UV y la arqueta de vertido hasta
+                                descargar en el Río Sar (cota 112,0 m).</li>
+                            <li><strong>Flujo de los Fangos (Bombeo mecánico forzado):</strong> Los lodos primarios
+                                purgados en la solera de decantadores y el lodo WAS purgado del MBR se bombean mediante
+                                bombas helicoidales hasta el espesador por gravedad. El lodo espesado al 4% se bombea de
+                                forma temporizada hasta el digestor anaerobio. El lodo digerido del depósito tampón se
+                                impulsa a presión mediante bombas de cavidad progresiva a las centrífugas de
+                                deshidratación.</li>
+                            <li><strong>Flujo del Gas (Presión biogénica y soplado):</strong> El biogás se genera a una
+                                presión de cabeza de 30-50 mbar en la cúpula del digestor. Fluye por su propia
+                                sobrepresión a través de la tubería de gas (filtrado de condensados y carbón activo)
+                                hasta los gasómetros de membrana. Soplantes centrífugas de biogás elevan la presión a
+                                unos 150-200 mbar para alimentar la válvula de gas del motor CHP y las calderas de
+                                calefacción.</li>
                         </ul>
                     </div>
                 </details>
@@ -637,26 +769,46 @@
                 <details>
                     <summary>P11. ¿Qué potencia eléctrica es necesario contratar y cómo se desglosa?</summary>
                     <div class="answer-body">
-                        <p>El consumo eléctrico se divide en los bombeos auxiliares calculados en Excel y los grandes consumos de aireación y filtración simulados en GPS-X8 Max:</p>
+                        <p>El consumo eléctrico se divide en los bombeos auxiliares calculados en Excel y los grandes
+                            consumos de aireación y filtración simulados en GPS-X8 Max:</p>
                         <ul>
-                            <li><strong>Bombeos auxiliares de proceso y ventilación (Excel V11 punta):</strong> 162,60 kW de potencia punta total de diseño, que incluye bombeos de lodo, dosificación química, retornos y el sistema de ventilación de desodorización.</li>
-                            <li><strong>Soplantes del reactor biológico (GPS-X8 Max):</strong> 316,70 kW. Suministran el aire necesario (30.282 m³/h) para la eliminación biológica y mezcla de la biomasa.</li>
-                            <li><strong>Bombas MBR de recirculación y purga (GPS-X8 Max):</strong> 242,44 kW para vencer la resistencia de filtración y mantener la recirculación interna.</li>
-                            <li><strong>Autogeneración cogeneración CHP (Biogás):</strong> Aporta 208,41 kWe de potencia eléctrica (a un rendimiento η = 35%) a partir de la combustión de los 2.336,64 m³/d de biogás generado, reduciendo la potencia neta externa.</li>
-                            <li><strong>Grandes elevaciones de alcantarillado exterior (B1 y B5):</strong> Bombeo B1 (98,22 kW) y Bombeo B5 (875,87 kW) de transporte hidráulico general que requieren su propio centro de transformación independiente de la planta.</li>
+                            <li><strong>Bombeos auxiliares de proceso y ventilación (Excel V11 punta):</strong> 162,60
+                                kW de potencia punta total de diseño, que incluye bombeos de lodo, dosificación química,
+                                retornos y el sistema de ventilación de desodorización.</li>
+                            <li><strong>Soplantes del reactor biológico (GPS-X8 Max):</strong> 316,70 kW. Suministran el
+                                aire necesario (30.282 m³/h) para la eliminación biológica y mezcla de la biomasa.</li>
+                            <li><strong>Bombas MBR de recirculación y purga (GPS-X8 Max):</strong> 242,44 kW para vencer
+                                la resistencia de filtración y mantener la recirculación interna.</li>
+                            <li><strong>Autogeneración cogeneración CHP (Biogás):</strong> Aporta 208,41 kWe de potencia
+                                eléctrica (a un rendimiento η = 35%) a partir de la combustión de los 2.336,64 m³/d de
+                                biogás generado, reduciendo la potencia neta externa.</li>
+                            <li><strong>Grandes elevaciones de alcantarillado exterior (B1 y B5):</strong> Bombeo B1
+                                (98,22 kW) y Bombeo B5 (875,87 kW) de transporte hidráulico general que requieren su
+                                propio centro de transformación independiente de la planta.</li>
                         </ul>
                     </div>
                 </details>
 
                 <details>
-                    <summary>P12. ¿Qué representa esta línea del plano, de dónde sale, a dónde llega y qué caudal transporta?</summary>
+                    <summary>P12. ¿Qué representa esta línea del plano, de dónde sale, a dónde llega y qué caudal
+                        transporta?</summary>
                     <div class="answer-body">
                         <ul>
-                            <li><strong>Línea de Agua Bruta (Azul):</strong> Conecta las bombas de cabecera B1 con los tamices de pretratamiento. Transporta un caudal punta de 84.240 m³/d (3.510 m³/h). *Variable GPS-X8: Cqcon&o = 84240.0*.</li>
-                            <li><strong>Conducto de Recirculación Interna (Verde):</strong> Conecta la zona aerobia final del reactor (Zona 4) con la zona anóxica inicial (Zona 1). Transporta un caudal de recirculación de 497.220 m³/d. *Variable GPS-X8: 1flowrate&o = 497220.0*.</li>
-                            <li><strong>Línea de Purga WAS (Marrón):</strong> Conecta los tanques MBR con el depósito de mezcla y espesamiento. Transporta un caudal de purga de lodo en exceso de 500 m³/d (simulación Max) / 750 m³/d (criterio de diseño). *Variable GPS-X8: MBRFang_Pur*.</li>
-                            <li><strong>Línea de Biogás (Naranja):</strong> Conecta la cúpula gaseosa del digestor cilíndrico con los gasómetros de membrana y el motor CHP. Transporta un caudal de biogás de 2.336,64 m³/d. *Variable GPS-X8: Biogas*.</li>
-                            <li><strong>Conducto de Retornos (Rosa):</strong> Conecta el edificio de deshidratación con el pozo de retornos de cabecera. Transporta un caudal aproximado de escurridos de lodo de 1.250 m³/d. *Fuente: Hoja 19_Retornos*.</li>
+                            <li><strong>Línea de Agua Bruta (Azul):</strong> Conecta las bombas de cabecera B1 con los
+                                tamices de pretratamiento. Transporta un caudal punta de 84.240 m³/d (3.510 m³/h).
+                                *Variable GPS-X8: Cqcon&o = 84240.0*.</li>
+                            <li><strong>Conducto de Recirculación Interna (Verde):</strong> Conecta la zona aerobia
+                                final del reactor (Zona 4) con la zona anóxica inicial (Zona 1). Transporta un caudal de
+                                recirculación de 497.220 m³/d. *Variable GPS-X8: 1flowrate&o = 497220.0*.</li>
+                            <li><strong>Línea de Purga WAS (Marrón):</strong> Conecta los tanques MBR con el depósito de
+                                mezcla y espesamiento. Transporta un caudal de purga de lodo en exceso de 500 m³/d
+                                (simulación Max) / 750 m³/d (criterio de diseño). *Variable GPS-X8: MBRFang_Pur*.</li>
+                            <li><strong>Línea de Biogás (Naranja):</strong> Conecta la cúpula gaseosa del digestor
+                                cilíndrico con los gasómetros de membrana y el motor CHP. Transporta un caudal de biogás
+                                de 2.336,64 m³/d. *Variable GPS-X8: Biogas*.</li>
+                            <li><strong>Conducto de Retornos (Rosa):</strong> Conecta el edificio de deshidratación con
+                                el pozo de retornos de cabecera. Transporta un caudal aproximado de escurridos de lodo
+                                de 1.250 m³/d. *Fuente: Hoja 19_Retornos*.</li>
                         </ul>
                     </div>
                 </details>
@@ -665,10 +817,20 @@
                     <summary>P13. ¿Qué representa este elemento del plano, qué volumen y qué superficie tiene?</summary>
                     <div class="answer-body">
                         <ul>
-                            <li><strong>Reactor BNR-MBR (2 bloques paralelos):</strong> Cada bloque representa una línea de tratamiento biológico de lodos activos. Volumen útil: 20.020 m³ por bloque (Total 40.040 m³). Superficie ocupada por bloque: 3.640 m² (Total 7.280 m²). Aloja un área de membranas de ultrafiltración de 175.500 m². *Variable GPS-X8: Cvmcon&o = 20020.0, Cmemarea&o = 175500.0*.</li>
-                            <li><strong>Decantador Primario Rectangular (2 unidades):</strong> Decantación física por gravedad de sólidos suspendidos. Superficie útil de lamelas: 810 m² por decantador (Total 1.620 m²) con una profundidad útil de 3 m. *Variable GPS-X8: Caflat&o = 810.0*.</li>
-                            <li><strong>Digestor Anaerobio (1 unidad):</strong> Reactor cilíndrico cerrado de hormigón para estabilización mesófila de lodos. Volumen útil: 9.116,89 m³ con volumen adicional de cabeza de gas de 2.266,47 m³. *Variable GPS-X8: Cvmcon&o = 9116.8902*.</li>
-                            <li><strong>Tanque de Tormentas (1 unidad):</strong> Vaso rectangular de hormigón armado para laminación hidráulica temporal de picos de lluvia de hasta 3,0 m³/s. Dimensionado según criterios de retención física de la hoja 55_Tormentas_Alivios.</li>
+                            <li><strong>Reactor BNR-MBR (2 bloques paralelos):</strong> Cada bloque representa una línea
+                                de tratamiento biológico de lodos activos. Volumen útil: 20.020 m³ por bloque (Total
+                                40.040 m³). Superficie ocupada por bloque: 3.640 m² (Total 7.280 m²). Aloja un área de
+                                membranas de ultrafiltración de 175.500 m². *Variable GPS-X8: Cvmcon&o = 20020.0,
+                                Cmemarea&o = 175500.0*.</li>
+                            <li><strong>Decantador Primario Rectangular (2 unidades):</strong> Decantación física por
+                                gravedad de sólidos suspendidos. Superficie útil: 810 m² por decantador (Total 1.620 m²)
+                                con una profundidad útil de 3 m. *Variable GPS-X8: Caflat&o = 810.0*.</li>
+                            <li><strong>Digestor Anaerobio (1 unidad):</strong> Reactor cilíndrico cerrado de hormigón
+                                para estabilización mesófila de lodos. Volumen útil: 9.116,89 m³ con volumen adicional
+                                de cabeza de gas de 2.266,47 m³. *Variable GPS-X8: Cvmcon&o = 9116.8902*.</li>
+                            <li><strong>Tanque de Tormentas (1 unidad):</strong> Vaso rectangular de hormigón armado
+                                para laminación hidráulica temporal de picos de lluvia de hasta 3,0 m³/s. Dimensionado
+                                según criterios de retención física de la hoja 55_Tormentas_Alivios.</li>
                         </ul>
                     </div>
                 </details>
@@ -677,13 +839,33 @@
                     <summary>PARTE 2. Justificación del Contenido Adicional Valorable (+2.0 Puntos)</summary>
                     <div class="answer-body">
                         <ul>
-                            <li><strong>1. Implantación en la Parcela:</strong> Aprovechamiento de la pendiente del meandro del Río Sar (121,1 → 112,0 m) para el flujo por gravedad de la línea de agua (Este a Oeste). Línea de fangos compacta concentrada en la franja Norte, maximizando el espacio libre y minimizando excavaciones.</li>
-                            <li><strong>2. Precálculos de Proceso:</strong> Recirculación interna calculada para desnitrificación (497.220 m³/d). Consumo específico de soplantes biológicas (30.282 m³/h, potencia 316,70 kW) y soplantes de aireación de membranas (242,44 kW). *Fuentes: GPS-X8 y Excel V11*.</li>
-                            <li><strong>3. Rendimientos de Eliminación:</strong> Justificados teórica y funcionalmente contra límites de vertido del Río Sar (DBO5 ≤ 8,5 mg/L, TP ≤ 0,68 mg/L, TN ≤ 10 mg/L). Simulación Max confirma cumplimiento amplio (SST 1,98, DBO5 2,02, TP 0,40 mg/L).</li>
-                            <li><strong>4. Criterios de Elección:</strong> MBR preferido frente a decantación secundaria convencional por calidad del efluente constante, menor volumen de reactor por MLSS elevado (8.000 mg/L) y nula sensibilidad a bulking de lodos. Digestión anaerobia elegida por estabilidad, control de olores y valorización energética del biogás (cogeneración CHP).</li>
-                            <li><strong>5. Línea Piezométrica y Perfiles:</strong> Perfil hidráulico desarrollado "cuerda estirada" de 493,1 m (agua) y 332,7 m (fangos). Elevación por bombas B1 en cabecera y el resto por gravedad pura. Muestra de cotas e HGL en láminas CAD.</li>
-                            <li><strong>6. Eficiencia Energética:</strong> Incorporación de variadores de frecuencia en motores principales (B1, soplantes), difusores de burbuja fina de alta transferencia en biorreactores y autogeneración CHP de 208,41 kWe de energía a partir del biogás para calor/electricidad del digestor.</li>
-                            <li><strong>7. Autogeneración CHP y Biogás:</strong> Producción diaria de 2.336,64 m³/d de biogás con 61,5% de CH4. Energía recuperada del metano equivale a 14.290,78 kWh/d, abasteciendo el CHP de 208,41 kWe con una eficiencia del 35%. Calor térmico residual (45%) recirculado para mantener el digestor a 35 °C.</li>
+                            <li><strong>1. Implantación en la Parcela:</strong> Aprovechamiento de la pendiente del
+                                meandro del Río Sar (121,1 → 112,0 m) para el flujo por gravedad de la línea de agua
+                                (Este a Oeste). Línea de fangos compacta concentrada en la franja Norte, maximizando el
+                                espacio libre y minimizando excavaciones.</li>
+                            <li><strong>2. Precálculos de Proceso:</strong> Recirculación interna calculada para
+                                desnitrificación (497.220 m³/d). Consumo específico de soplantes biológicas (30.282
+                                m³/h, potencia 316,70 kW) y soplantes de aireación de membranas (242,44 kW). *Fuentes:
+                                GPS-X8 y Excel V11*.</li>
+                            <li><strong>3. Rendimientos de Eliminación:</strong> Justificados teórica y funcionalmente
+                                contra límites de vertido del Río Sar (DBO5 ≤ 8,5 mg/L, TP ≤ 0,68 mg/L, TN ≤ 10 mg/L).
+                                Simulación Max confirma cumplimiento amplio (SST 1,98, DBO5 2,02, TP 0,40 mg/L).</li>
+                            <li><strong>4. Criterios de Elección:</strong> MBR preferido frente a decantación secundaria
+                                convencional por calidad del efluente constante, menor volumen de reactor por MLSS
+                                elevado (8.000 mg/L) y nula sensibilidad a bulking de lodos. Digestión anaerobia elegida
+                                por estabilidad, control de olores y valorización energética del biogás (cogeneración
+                                CHP).</li>
+                            <li><strong>5. Línea Piezométrica y Perfiles:</strong> Perfil hidráulico desarrollado
+                                "cuerda estirada" de 493,1 m (agua) y 332,7 m (fangos). Elevación por bombas B1 en
+                                cabecera y el resto por gravedad pura. Muestra de cotas e HGL en láminas CAD.</li>
+                            <li><strong>6. Eficiencia Energética:</strong> Incorporación de variadores de frecuencia en
+                                motores principales (B1, soplantes), difusores de burbuja fina de alta transferencia en
+                                biorreactores y autogeneración CHP de 208,41 kWe de energía a partir del biogás para
+                                calor/electricidad del digestor.</li>
+                            <li><strong>7. Autogeneración CHP y Biogás:</strong> Producción diaria de 2.336,64 m³/d de
+                                biogás con 61,5% de CH4. Energía recuperada del metano equivale a 14.290,78 kWh/d,
+                                abasteciendo el CHP de 208,41 kWe con una eficiencia del 35%. Calor térmico residual
+                                (45%) recirculado para mantener el digestor a 35 °C.</li>
                         </ul>
                     </div>
                 </details>
@@ -1202,7 +1384,7 @@
                             <td><code>1flowrate&o = 497220.0</code></td>
                         </tr>
                         <tr>
-                            <td>Área decantador (lamelar)</td>
+                            <td>Área decantador (en planta)</td>
                             <td>810 m²</td>
                             <td><code>Caflat&o = 810.0</code></td>
                         </tr>
