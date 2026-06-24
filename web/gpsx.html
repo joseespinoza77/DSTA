@@ -297,6 +297,42 @@
                 padding: 14px 10px;
             }
         }
+
+        /* Solo celular pequeño (≤480px) */
+        @media (max-width: 480px) {
+            .content {
+                padding: 10px 8px;
+            }
+
+            .page-title {
+                font-size: 18px;
+            }
+
+            .page-subtitle {
+                font-size: 12px;
+            }
+
+            .image-grid {
+                gap: 10px;
+            }
+
+            .layout-featured img {
+                border-radius: 6px;
+            }
+
+            .gpsx-section h2 {
+                font-size: 16px;
+            }
+
+            .gpsx-section h3 {
+                font-size: 13px;
+            }
+
+            .image-card .caption {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+        }
     </style>
 </head>
 
@@ -336,7 +372,7 @@
             <h2>Planta General &mdash; Layout</h2>
             <div class="layout-featured">
                 <img src="assets/images/gpsx/PlantaEDAR.png" alt="Layout completo EDAR Silvouta en GPS-X 8.0"
-                    onclick="openLightbox(this.src)">
+                    loading="lazy" onclick="openLightbox(this.src)">
                 <div class="caption">Layout completo de la EDAR Silvouta en GPS-X 8.0 &mdash; Bloques de proceso
                     interconectados</div>
             </div>
@@ -348,42 +384,42 @@
             <h3>Resultados de simulación estacionaria &mdash; Escenario Punta</h3>
             <div class="image-grid">
                 <div class="image-card">
-                    <img src="assets/images/gpsx/max/Aireacion.png" alt="Aireación - Caudal Máximo"
+                    <img src="assets/images/gpsx/max/Aireacion.png" alt="Aireación - Caudal Máximo" loading="lazy"
                         onclick="openLightbox(this.src)">
                     <div class="caption">Aireación &mdash; Oxígeno disuelto y demanda</div>
                 </div>
                 <div class="image-card">
-                    <img src="assets/images/gpsx/max/CargaMasica.png" alt="Carga Másica - Caudal Máximo"
+                    <img src="assets/images/gpsx/max/CargaMasica.png" alt="Carga Másica - Caudal Máximo" loading="lazy"
                         onclick="openLightbox(this.src)">
                     <div class="caption">Carga Másica &mdash; Relación F/M</div>
                 </div>
                 <div class="image-card">
-                    <img src="assets/images/gpsx/max/Caudal.png" alt="Caudal - Caudal Máximo"
+                    <img src="assets/images/gpsx/max/Caudal.png" alt="Caudal - Caudal Máximo" loading="lazy"
                         onclick="openLightbox(this.src)">
                     <div class="caption">Caudal &mdash; Líneas de agua y fangos</div>
                 </div>
                 <div class="image-card">
-                    <img src="assets/images/gpsx/max/DQO.png" alt="DQO - Caudal Máximo"
+                    <img src="assets/images/gpsx/max/DQO.png" alt="DQO - Caudal Máximo" loading="lazy"
                         onclick="openLightbox(this.src)">
                     <div class="caption">DQO &mdash; Demanda Química de Oxígeno</div>
                 </div>
                 <div class="image-card">
                     <img src="assets/images/gpsx/max/EnergiaTotal.png" alt="Energía Total - Caudal Máximo"
-                        onclick="openLightbox(this.src)">
+                        loading="lazy" onclick="openLightbox(this.src)">
                     <div class="caption">Energía Total &mdash; Balance energético</div>
                 </div>
                 <div class="image-card">
-                    <img src="assets/images/gpsx/max/TFosforo.png" alt="Fósforo Total - Caudal Máximo"
+                    <img src="assets/images/gpsx/max/TFosforo.png" alt="Fósforo Total - Caudal Máximo" loading="lazy"
                         onclick="openLightbox(this.src)">
                     <div class="caption">Fósforo Total &mdash; PT</div>
                 </div>
                 <div class="image-card">
-                    <img src="assets/images/gpsx/max/TNitrogen.png" alt="Nitrógeno Total - Caudal Máximo"
+                    <img src="assets/images/gpsx/max/TNitrogen.png" alt="Nitrógeno Total - Caudal Máximo" loading="lazy"
                         onclick="openLightbox(this.src)">
                     <div class="caption">Nitrógeno Total &mdash; TN</div>
                 </div>
                 <div class="image-card">
-                    <img src="assets/images/gpsx/max/TSS.png" alt="Sólidos Suspendidos - Caudal Máximo"
+                    <img src="assets/images/gpsx/max/TSS.png" alt="Sólidos Suspendidos - Caudal Máximo" loading="lazy"
                         onclick="openLightbox(this.src)">
                     <div class="caption">SST &mdash; Sólidos Suspendidos Totales</div>
                 </div>
@@ -397,42 +433,42 @@
             <div class="image-grid">
                 <div class="image-card">
                     <img src="assets/images/gpsx/Promedio/Aireacion.png" alt="Aireación - Caudal Promedio"
-                        onclick="openLightbox(this.src)">
+                        loading="lazy" onclick="openLightbox(this.src)">
                     <div class="caption">Aireación &mdash; Oxígeno disuelto y demanda</div>
                 </div>
                 <div class="image-card">
                     <img src="assets/images/gpsx/Promedio/CargaMasica.png" alt="Carga Másica - Caudal Promedio"
-                        onclick="openLightbox(this.src)">
+                        loading="lazy" onclick="openLightbox(this.src)">
                     <div class="caption">Carga Másica &mdash; Relación F/M</div>
                 </div>
                 <div class="image-card">
-                    <img src="assets/images/gpsx/Promedio/Caudal.png" alt="Caudal - Caudal Promedio"
+                    <img src="assets/images/gpsx/Promedio/Caudal.png" alt="Caudal - Caudal Promedio" loading="lazy"
                         onclick="openLightbox(this.src)">
                     <div class="caption">Caudal &mdash; Líneas de agua y fangos</div>
                 </div>
                 <div class="image-card">
-                    <img src="assets/images/gpsx/Promedio/DQO.png" alt="DQO - Caudal Promedio"
+                    <img src="assets/images/gpsx/Promedio/DQO.png" alt="DQO - Caudal Promedio" loading="lazy"
                         onclick="openLightbox(this.src)">
                     <div class="caption">DQO &mdash; Demanda Química de Oxígeno</div>
                 </div>
                 <div class="image-card">
                     <img src="assets/images/gpsx/Promedio/EnergiaTotal.png" alt="Energía Total - Caudal Promedio"
-                        onclick="openLightbox(this.src)">
+                        loading="lazy" onclick="openLightbox(this.src)">
                     <div class="caption">Energía Total &mdash; Balance energético</div>
                 </div>
                 <div class="image-card">
                     <img src="assets/images/gpsx/Promedio/TFosforo.png" alt="Fósforo Total - Caudal Promedio"
-                        onclick="openLightbox(this.src)">
+                        loading="lazy" onclick="openLightbox(this.src)">
                     <div class="caption">Fósforo Total &mdash; PT</div>
                 </div>
                 <div class="image-card">
                     <img src="assets/images/gpsx/Promedio/TNitrogeno.png" alt="Nitrógeno Total - Caudal Promedio"
-                        onclick="openLightbox(this.src)">
+                        loading="lazy" onclick="openLightbox(this.src)">
                     <div class="caption">Nitrógeno Total &mdash; TN</div>
                 </div>
                 <div class="image-card">
                     <img src="assets/images/gpsx/Promedio/TSS.png" alt="Sólidos Suspendidos - Caudal Promedio"
-                        onclick="openLightbox(this.src)">
+                        loading="lazy" onclick="openLightbox(this.src)">
                     <div class="caption">SST &mdash; Sólidos Suspendidos Totales</div>
                 </div>
             </div>

@@ -452,6 +452,34 @@
                 display: none;
             }
         }
+
+        /* Solo celular pequeño (≤480px) */
+        @media (max-width: 480px) {
+            .header-logo {
+                height: 38px;
+            }
+
+            .brand strong {
+                font-size: 12px;
+            }
+
+            .nav a {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+
+            .toolbar {
+                top: 6px;
+                left: 6px;
+                width: min(240px, calc(100% - 12px));
+                max-height: calc(100% - 52px);
+            }
+
+            .site-header {
+                height: 50px;
+                padding: 4px 8px;
+            }
+        }
     </style>
 </head>
 

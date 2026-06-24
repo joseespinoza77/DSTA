@@ -397,6 +397,138 @@
             background: #f0f7f7;
             font-weight: 700;
         }
+
+        /* ================================================================
+           RESPONSIVE – Solo se activa en pantallas ≤820px (tablet/celular)
+           Desktop (>820px) no ve nada de esto.
+           ================================================================ */
+        @media (max-width: 820px) {
+            .site-header {
+                height: 58px;
+                padding: 9px 12px;
+            }
+
+            .brand span,
+            .nav a:not(.active) {
+                display: none;
+            }
+
+            .nav {
+                gap: 4px;
+            }
+
+            .nav a {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+
+            .content {
+                padding: 14px 10px 32px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .metric-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .metric {
+                padding: 12px;
+            }
+
+            .metric strong {
+                font-size: 20px;
+            }
+
+            .grid-2,
+            .grid-3,
+            .equation-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .section {
+                padding: 12px;
+                margin-top: 14px;
+            }
+
+            .section h2 {
+                font-size: 17px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 6px 7px;
+            }
+
+            .examen-section {
+                padding: 12px;
+            }
+
+            .examen-section h2 {
+                font-size: 18px;
+            }
+
+            .examen-accordion summary {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+
+            .examen-accordion .answer-body {
+                padding: 12px;
+                font-size: 12px;
+            }
+
+            .chart-card {
+                padding: 8px;
+            }
+
+            .line-chart {
+                min-height: 180px;
+            }
+        }
+
+        /* ================================================================
+           RESPONSIVE – Solo se activa en pantallas ≤480px (celular pequeño)
+           ================================================================ */
+        @media (max-width: 480px) {
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav a {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+
+            .content {
+                padding: 10px 8px 28px;
+            }
+
+            h1 {
+                font-size: 19px;
+            }
+
+            .section h2 {
+                font-size: 15px;
+            }
+
+            .examen-section h2 {
+                font-size: 16px;
+            }
+
+            .examen-accordion summary {
+                font-size: 12px;
+                padding: 8px 10px;
+            }
+        }
     </style>
 </head>
 
