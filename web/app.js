@@ -104,7 +104,7 @@ let labelLayoutDirty = true;
 let labelFrame = 0;
 let hasBuiltPlant = false;
 let labelScaleFactor = 1.0;
-const VIEWER_VERSION = '20260624-fix-labels-3';
+const VIEWER_VERSION = '20260624-fix-elevations-1';
 
 // ==========================================
 // BLOCK C: Coordinate transforms, line labels, visibility
