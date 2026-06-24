@@ -1,0 +1,15 @@
+# Ignorar todo en la raíz por defecto
+/*
+
+# Exceptuar la carpeta del Gemelo Digital
+!/web/
+
+# Exceptuar scripts específicos (servidor web) pero ignorar el resto de scripts
+!/scripts/
+/scripts/*
+!/scripts/serve_web.py
+
+# Exceptuar archivos de control y conveniencia en la raíz
+!/.gitignore
+!/README.md
+!/index.html

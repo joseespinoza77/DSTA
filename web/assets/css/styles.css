@@ -1,0 +1,74 @@
+/* Estilos comunes */
+body {
+    background-color: #f5faf9;
+    color: #17313b;
+    margin: 0;
+    font-family: 'Segoe UI', Inter, Tahoma, sans-serif;
+}
+
+/* Grid Layout de la Aplicación */
+.viewer-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    height: calc(100vh - 54px);
+    overflow: hidden;
+}
+
+/* Visor 3D */
+.viewer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #111820;
+    min-width: 0;
+}
+
+#canvas-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Scrollbar personalizado para el panel lateral */
+.side-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.side-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.side-panel::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+}
+
+.side-panel::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* Estilos de botones */
+button {
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-0.5px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Responsividad para móviles */
+@media (max-width: 980px) {
+    .viewer-shell {
+        grid-template-columns: 1fr;
+        grid-template-rows: 55vh 45vh;
+        height: auto;
+    }
+
+    .side-panel {
+        border-left: none;
+        border-top: 1px solid #d7e4e7;
+    }
+}
