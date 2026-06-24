@@ -1104,3 +1104,36 @@ Se actualizó la barra de navegación en [`web/index.html`](web/index.html) y [`
 - [`web/gpsx.html`](web/gpsx.html) carga correctamente con grid de imágenes y lightbox funcional.
 - Las tres páginas (`index.html`, `datos.html`, `gpsx.html`) comparten navegación consistente con los tres enlaces.
 - Commit [`28e32fe`](https://github.com/joseespinoza77/DSTA/commit/28e32fe) subido a GitHub.
+
+## Pestaña Diagrama — Flujograma Integral (2026-06-24)
+
+### Diagnóstico
+
+El Jefe solicitó agregar una cuarta pestaña al sitio web del gemelo digital mostrando el flujograma integral del proceso EDAR Silvouta.
+
+### Acción
+
+Se creó [`web/diagrama.html`](web/diagrama.html) — página con visualización centrada del flujograma integral y lightbox para ampliación. Se copió el PNG `flujograma_integral_edar_silvouta_ascii_letra_grande.png` desde [`0diagrama/`](0diagrama/) a `web/assets/images/diagrama/`.
+
+Se actualizó la barra de navegación en [`web/index.html`](web/index.html), [`web/datos.html`](web/datos.html) y [`web/gpsx.html`](web/gpsx.html) para incluir el enlace `Diagrama`.
+
+### Archivos nuevos
+
+| Archivo | Descripción |
+|---------|-------------|
+| [`web/diagrama.html`](web/diagrama.html) | Página de visualización del flujograma integral con lightbox |
+| `web/assets/images/diagrama/flujograma_integral_edar_silvouta_ascii_letra_grande.png` | Flujograma integral del proceso EDAR Silvouta |
+
+### Archivos modificados
+
+| Archivo | Cambio |
+|---------|--------|
+| [`web/index.html`](web/index.html) | Nav: agregado enlace `Diagrama` |
+| [`web/datos.html`](web/datos.html) | Nav: agregado enlace `Diagrama` |
+| [`web/gpsx.html`](web/gpsx.html) | Nav: agregado enlace `Diagrama` |
+
+### Verificación
+
+- El PNG existe en `web/assets/images/diagrama/`.
+- [`web/diagrama.html`](web/diagrama.html) carga correctamente con visualización centrada y lightbox funcional.
+- Las cuatro páginas (`index.html`, `datos.html`, `gpsx.html`, `diagrama.html`) comparten navegación consistente con los cuatro enlaces.
